@@ -17,16 +17,22 @@
   gap: 16px;
 }
 
+.logo img {
+  /*selecting a descendant of .logo - selecting all images under .logo class*/
+  width: 68px;
+  height: 68px;
+}
+
 body {
   background-color: #0e7490;
   color: #fafaf9;
   font-family: Sono, sans-serif;
-  padding: 40px;
+  padding: 48px 64px;
 }
 
 .contents {
   max-width: 1000px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 h1 {
