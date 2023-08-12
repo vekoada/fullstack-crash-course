@@ -78,8 +78,17 @@ main {
   color: #fca5a5;
 }
 
-.source:hover {
+.source:link,
+.source:visited {
+  /*Typically these will be kept together like this*/
+  color: #fca5a5;
+}
+
+.source:hover,
+.source:active {
   /*pseudo class hover allows different color on mouse hover*/
+  /*pseudo class active allows diff col on click*/
+  /*pseudo class visited allows diff col when link visited*/
   color: blue;
 }
 
