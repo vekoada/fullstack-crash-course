@@ -78,6 +78,11 @@ main {
   color: #fca5a5;
 }
 
+.source:hover {
+  /*pseudo class hover allows different color on mouse hover*/
+  color: blue;
+}
+
 .tag {
   text-transform: uppercase;
   font-size: 14px;
