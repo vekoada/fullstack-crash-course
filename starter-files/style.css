@@ -72,11 +72,26 @@ main {
 
 .reactions {
   margin-left: auto;
+  display: flex;
+  flex-shrink: 0;
+  gap: 8px;
 }
 
 .reactions button {
   border: none;
+  border-radius: 30px;
   background-color: #22d3ee;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 600;
+  color: inherit;
+  cursor: pointer;
+  padding: 6px 12px;
+}
+
+.reactions button:hover {
+  background-color: #0e7490;
+  transition: 0.3s;
 }
 
 .source:link,
