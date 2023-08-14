@@ -74,14 +74,17 @@ main {
   margin-left: auto;
 }
 
-.source {
-  color: #fca5a5;
+.reactions button {
+  border: none;
+  background-color: #22d3ee;
 }
 
 .source:link,
 .source:visited {
   /*Typically these will be kept together like this*/
   color: #fca5a5;
+  margin-left: 12px;
+  transition: 0.3s;
 }
 
 .source:hover,
@@ -101,8 +104,51 @@ main {
   padding-top: 3px;
   padding-left: 10px;
   padding-right: 10px;
+  border-radius: 30px;
+}
+
+.tag:hover {
+  cursor: pointer;
+  transform: scale(110%) rotate(2deg);
 }
 
 ul {
   list-style: none;
+}
+
+.btn:hover {
+  transform: scale(110%) rotate(2deg);
+  cursor: pointer;
+}
+
+.btn {
+  border: none;
+  font-family: Coiny, sans-serif;
+  line-height: 1;
+  text-transform: uppercase;
+  color: inherit; /*forcing inherit from body style*/
+  font-size: 17px;
+  padding: 16px 0 13px; /*top, sides, bottom*/
+  background-image: linear-gradient(135deg, #ef4444, #a855f7);
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.btn-large {
+  padding: 20px 32px 17px;
+  font-size: 20px;
+}
+
+.btn-all-categories {
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.btn-category {
+  width: 100%;
+  background-image: none;
+}
+
+.category {
+  margin-bottom: 16px;
 }
