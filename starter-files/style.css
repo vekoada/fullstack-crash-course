@@ -51,6 +51,12 @@ main {
   gap: 48px;
 }
 
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr; /*change to just 1 column*/
+  }
+}
+
 .fact-form {
   display: flex;
   border-radius: 16px;
