@@ -40,6 +40,25 @@ const factsList = document.querySelector(".fact-list");
 
 factsList.innerHTML = ""; //Remove all facts from list - this is to allow dynamic fact creation - we could just delete the html...
 
+//loading data from supabase
+async function loadFacts() {
+  const res = await fetch(
+    "https://myhmwofhbdrsyvcildjz.supabase.co/rest/v1/facts",
+    {
+      headers: {
+        apikey:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im15aG13b2ZoYmRyc3l2Y2lsZGp6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTE2MjUzMTEsImV4cCI6MjAwNzIwMTMxMX0.lLUQEN5jWk387LB5RLVfYGrFXtFoPZBAkrZYn6O4wEw",
+        authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im15aG13b2ZoYmRyc3l2Y2lsZGp6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTE2MjUzMTEsImV4cCI6MjAwNzIwMTMxMX0.lLUQEN5jWk387LB5RLVfYGrFXtFoPZBAkrZYn6O4wEw",
+      },
+    }
+  );
+  const data = await res.json(); //Obtaining json data
+  createFactsList(data);
+}
+
+loadFacts(); //call our data loading function
+
 function createFactsList(dataArray) {
   const htmlArr = dataArray.map(
     (fact) => `<li class="fact">
