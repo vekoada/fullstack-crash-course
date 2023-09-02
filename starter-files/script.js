@@ -36,12 +36,33 @@ const initialFacts = [
 //Select DOM elements
 const btn = document.querySelector(".btn-open");
 const form = document.querySelector(".fact-form");
-const list = document.querySelector(".fact-list");
+const factsList = document.querySelector(".fact-list");
 
-list.innerHTML = ""; //Remove all facts from list - this is to allow dynamic fact creation - we could just delete the html...
-list.insertAdjacentHTML("afterbegin");
+factsList.innerHTML = ""; //Remove all facts from list - this is to allow dynamic fact creation - we could just delete the html...
 
-const factArray = initialFacts.map();
+function createFactsList(dataArray) {
+  const htmlArr = dataArray.map(
+    (fact) => `<li class="fact">
+      <p>  
+    ${fact.text}
+      <a
+      class="source"
+      href="${fact.source}"
+      target="_blank"
+      >(Source)</a>
+      </p>
+      <span class="tag" style="background-color:
+      #3b82f6">
+        ${fact.category}
+      </span>
+    </li>`
+  );
+  const html = htmlArr.join("");
+  factsList.insertAdjacentHTML("afterbegin", html);
+}
+
+createFactsList(initialFacts);
+
 //Toggle form visibility
 btn.addEventListener("click", function () {
   if (form.classList.contains("hidden")) {
